@@ -28,13 +28,6 @@ setwd("/Users/rjwilliams/Dengue/Dengue Project")
 ### age has been changed to age_groups in our public data set (due to privacy concerns)
 ### for the same reason, exact dates have been changed to a month/year format
 
-df <- read.csv('dengue_prediction_9_2023.csv')
-
-df$admitdate <- as.yearmon(df$admitdate)
-df <- df[,-c(1)]
-
-write.csv(df, 'dengue_prediction_10_2023.csv')
-
 
 #Choose predictors for RF
 dat_clin12 <- dat %>% dplyr::select('resp', 'age', 'cough', 'nausea', 'VISIB_aggr',
